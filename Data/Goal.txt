@@ -1,0 +1,15 @@
+Vision: To make a device that can store and display recipies.
+
+Base features:
+   - Display ingredients and recipies
+   - Easy to press physical buttons to navigate cooking instructions when hands are dirty in middle of cooking
+   - Edit recipie list remotely
+   - Scalable portions
+   - Export shopping list to pc+ app
+Extra features:
+   - Meal + leftovers planner (calendar type thing)
+   - Expiry tracker
+   - Given list of ingredients give meal possibilities (kinda hard to keep updated) maybe easy presets or get from pc+
+   - General tips and tricks for prep when an ingredient appears
+   - Add tools needed (stove, 1cup measure, table spoon etc.) could eventually use to optimize cooking meals in parallel
+   - Group ingredients and align with the step in instructions where needed

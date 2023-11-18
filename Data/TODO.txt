@@ -1,0 +1,9 @@
+- [ ] Plan
+- [ ] Setup raspberry pi
+- [ ] Test Mealie
+- [ ] Install Nginx
+- [ ] Develop backend
+- [ ] Develop frontend
+- [ ] 3D model/print case and add control buttons
+- [ ] Script to export shopping list and import it into PC+
+- [ ] Make frontend more aesthetically pleasing

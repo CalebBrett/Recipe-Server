@@ -1,0 +1,18 @@
+server + screen + buttons
+	- screen show list and choose -> open ingredients and instructions
+	- ability to scale recipie
+	- button to scroll up and down
+	- button to zoom?
+server -> so can add and edit remotley and have it all sync
+ingredient list + scalable portions
+instructions
+meal plan + leftover
+export shopping list into pc app.
+
+expiery thing maybe
+
+Given list of ingredients give meal possibilities (kinda hard to keep updated) maybe easy presets or get from pc+ -> would need to also have tolerences for ingredients that are not super important
+
+Rail movement system so it follows you around the kitchen (probably too overkill)
+
+Add tools needed (stove, 1cup measure, table spoon etc.) could eventually use to optimize cooking meals in parallel or indicate when can be washed (ie no longer required)

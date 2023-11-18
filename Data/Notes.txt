@@ -1,0 +1,13 @@
+Backend:
+Database for recipies -> relational ingredients and instructions -> what i have at home -> expiery timers + done meals
+Pc+ script take ingredients for upcoming recipies and export to pc format and import into pc website
+
+Front end:
+On external connection -> add/edit recipies -> que up next session (with scaling) -> export next session to PC list
+On device -> List of recipies sorted by meal, type and oldest unused -> choose one or more to add to current session or start session if done on external conneted device -> view current session and move between 1 or more recipies -> for each show ingredients and instrucitons (with scaling not really needed but good incase need to scale at time of cooking)
+
+Buttons that I can hit with elbow (messy hands) to navigate while cooking:
+Scroll up and down buttons
+Cycle back and forth between group of few recipies buttons
+Changed view (side by side or single) button
+Maybe 2 extra buttons for extra features (maybe not because done and scaling can all be done from the touch screen and wont be needed while cooking)
