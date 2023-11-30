@@ -1,57 +1,67 @@
+@import url("https://fonts.cdnfonts.com/css/antipasto");
+
 :root {
   --background-body: #1d1d1d;
   --background-content: orangered;
+  --alt-content: salmon;
   --text-color: #000000;
   --highlight-color: green;
-  /* --navbar-height: 2em;
-  --min-width: 300px;
-  --edge-gap: 5%;
-  --text-padding: 0.3em; */
+  --gap-size: 30px;
+  --small-gap-size: 10px;
+  --font-size: 1.5em;
 }
 
 * {
   padding: 0;
   margin: 0;
   border: none;
+  pointer-events: auto;
+  color: var(--text-color);
+  font-family: "Antipasto", sans-serif;
+  letter-spacing: 0.15rem;
+  font-weight: bold;
 }
 
 body {
   max-width: 100vw;
   background: var(--background-body);
-  color: var(--text-color);
-  font-size: 1em;
-  font-family: "Roboto", sans-serif; /* TODO: Change */
+  font-size: var(--font-size);
 }
 
 /* Top Bar */
 .header {
   max-width: 100vw;
+  height: 5vh;
   background-color: var(--background-content);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: var(--small-gap-size);
+  gap: var(--gap-size);
 }
 
 .header input {
   width: 50%;
   border-radius: 50px;
   height: 2.5em;
-  padding: 1%;
 }
 
 .header a {
   background-color: var(--highlight-color);
   text-align: center;
-  padding: 1%;
-  margin: 1%;
-  border-radius: 50px;
+  padding: var(--small-gap-size);
+  border-radius: 15px;
+  text-decoration: none;
 }
 
 .filters {
   width: 50%;
   margin: 0 25% 0 25%;
+  padding: var(--small-gap-size);
   display: flex;
   justify-content: space-evenly;
+  background-color: var(--background-content);
+  border-radius: 0 0 50px 50px;
 }
 
 .filters button {
@@ -68,33 +78,50 @@ body {
 
 /* List Page (index) */
 #list {
-  /* width: 100vw; */
   display: grid;
-  grid-template-columns: auto auto auto auto; /* Change with screen size or add slider */
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Change with screen size or add slider */
+}
+
+.recipeCard {
+  background-color: var(--background-content);
+  border-radius: 2em;
+  margin: var(--gap-size);
+  padding: var(--gap-size);
+  text-decoration: none;
+}
+
+.recipeCard:hover {
+  background-color: var(--alt-content);
+}
+
+.recipeCard img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2em 2em 0 0;
+}
+
+/* .selected {
+  border: solid 10px green;
+} */
+
+/* Viewer Page */
+#view {
+  display: flex;
+  align-items: flex-start;
 }
 
 .card {
   background-color: var(--background-content);
   border-radius: 2em;
-  margin: 25px;
-  padding: 40px;
-}
-
-.card img {
-  height: 300px;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 50px 50px 0 0;
-}
-
-/* Viewer Page */
-#viewer {
-  display: flex;
-  align-items: flex-start;
+  margin: var(--gap-size);
+  padding: var(--gap-size);
+  text-decoration: none;
 }
 
 #ingredients {
   width: 30%;
+  min-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -102,9 +129,79 @@ body {
 
 #instructions {
   width: 70%;
+  min-width: 440px;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
+}
+
+#portionButtons {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#portionButtons button {
+  margin-left: 3%;
+  height: 50px;
+  width: 50px;
+  background-color: var(--background-content);
+  border: solid 3px var(--text-color);
+}
+
+#portionButtons button:hover {
+  background-color: var(--alt-content);
+}
+
+/* Create & Edit Page */
+.forms {
+  height: 78vh;
+  background-color: var(--background-content);
+  border-radius: 2em;
+  padding: var(--gap-size);
+  margin: 2%;
+}
+
+.forms form {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 4fr 1fr;
+  gap: var(--gap-size);
+}
+
+.forms textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  font-size: 1.2em;
+}
+
+.textInput {
+  width: 300px;
+  margin: var(--small-gap-size);
+  font-size: 1.2em;
+}
+
+#numberInput {
+  width: 42px;
+  margin: var(--small-gap-size);
+  margin-right: 0;
+  font-size: 1.2em;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submitButton {
+  background-color: var(--highlight-color);
+  text-align: center;
+  margin: var(--gap-size);
+  padding: var(--gap-size);
+  border-radius: 50px;
+  text-decoration: none;
 }
 
 /* Mobile */
