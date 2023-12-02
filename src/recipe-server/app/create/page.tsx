@@ -39,10 +39,10 @@ export default function Create() {
   return (
     <div>
       <div className="header">
-        <Link className="button" href="/">
+        <Link className="link" href="/">
           &lt;-
         </Link>
-        <h1>Creating new recipe</h1>
+        <h2>Creating new recipe</h2>
         <div></div>
       </div>
       <div className="forms">
@@ -58,18 +58,18 @@ export default function Create() {
           </label>
           <label>
             Ingredients:
-            <textarea name="_ingredients" />
+            <textarea name="_ingredients" className="mainTextareas" />
           </label>
           <label>
             Instructions:
-            <textarea name="_instructions" />
+            <textarea name="_instructions" className="mainTextareas" />
           </label>
           <label>
             Notes:
             <textarea name="_tools" />
           </label>
           <div className="buttonBox">
-            <input type="submit" value="Create" className="submitButton" />
+            <input type="submit" value="Create" className="link" />
           </div>
         </form>
       </div>

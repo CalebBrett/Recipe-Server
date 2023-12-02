@@ -50,39 +50,33 @@ export default function View({ recipe }) {
     return (
         <div id="view">
             <div id="ingredients">
-                <div className="card">
-                    <div id="portionButtons">
-                        <h1>Ingredients</h1>
-                        <button onClick={() => modifyPortion(true)}>+</button>
-                        <button onClick={() => modifyPortion(false)}>−</button>
-                    </div>
-                    {recipe?.portionNum * portionMultiplyer + " " + recipe?.portionDesc}
-                    <br />
-                    <br />
-                    <ul>
-                        {ingredients?.map((item, index) => {
-                            return <li key={item}>{isNaN(sizeList[index] * portionMultiplyer) ? simplifyFraction(sizeList[index]) : sizeList[index] * portionMultiplyer} {item}</li>;
-                        })}
-                    </ul>
+                <div id="portionButtons">
+                    <h2>Ingredients</h2>
+                    <button onClick={() => modifyPortion(true)}>+</button>
+                    <button onClick={() => modifyPortion(false)}>−</button>
                 </div>
-                <div className="card">
-                    <h1>Notes</h1>
-                    <ul>
-                        {tools?.map((tool) => {
-                            return <li key={tool}>{tool}</li>;
-                        })}
-                    </ul>
-                </div>
+                {recipe?.portionNum * portionMultiplyer + " " + recipe?.portionDesc}
+                <br />
+                <br />
+                <ul>
+                    {ingredients?.map((item, index) => {
+                        return <li key={item}>{isNaN(sizeList[index] * portionMultiplyer) ? simplifyFraction(sizeList[index]) : sizeList[index] * portionMultiplyer} {item}</li>;
+                    })}
+                </ul>
+                <h2 id="notes">Notes</h2>
+                <ul>
+                    {tools?.map((tool) => {
+                        return <li key={tool}>{tool}</li>;
+                    })}
+                </ul>
             </div>
             <div id="instructions">
-                <div className="card">
-                    <h1>Instructions</h1>
-                    <ul>
-                        {instructions?.map((step) => {
-                            return <li key={step}>{step}</li>;
-                        })}
-                    </ul>
-                </div>
+                <h2>Instructions</h2>
+                <ul>
+                    {instructions?.map((step) => {
+                        return <li key={step}>{step}</li>;
+                    })}
+                </ul>
             </div>
         </div>
     );

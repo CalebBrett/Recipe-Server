@@ -21,12 +21,13 @@ export default function SummaryCard({ recipe }) {
   return (
     <div className="recipeCard">
       <Link href={"/viewer/" + recipe.id}>
-        <Image src={"/foodImages/" + recipe.name + ".jpg"} width={200}
-          height={200} />
-        <h1>{recipe.name}</h1>
+        <Image className="recipeImage" src={"/foodImages/" + recipe.name + ".jpg"} width={9999}
+          height={9999} />
+        <h3>{recipe.name}</h3>
       </Link>
       <Link className="button" href={"/edit/" + recipe.id}>
-        Edit
+        <Image className="icon" src="/icons/edit.png" width={9999}
+          height={9999} alt="Edit" />
       </Link>
     </div>
   );

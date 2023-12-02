@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <>
       <div className="header">
-        <Link className="button" href="/create">
+        <Link className="link" href="/create">
           New
         </Link>
         <input type="search" />

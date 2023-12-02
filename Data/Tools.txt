@@ -4,5 +4,6 @@ Tools to use:
    - Nginx
 Tools to learn:
    - More about web servers and networking
-   - REST API's
-   - backend frameworks? django? flask?
+   - Next.js
+   - Prisma
+   - Modern fullstack standards

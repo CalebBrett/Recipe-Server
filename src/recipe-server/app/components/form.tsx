@@ -55,19 +55,19 @@ export default function Form({ recipe }) {
         </label>
         <label>
           Ingredients:
-          <textarea name="_ingredients" defaultValue={recipe.ingredients} />
+          <textarea name="_ingredients" defaultValue={recipe.ingredients} className="mainTextareas" />
         </label>
         <label>
           Instructions:
-          <textarea name="_instructions" defaultValue={recipe.instructions} />
+          <textarea name="_instructions" defaultValue={recipe.instructions} className="mainTextareas" />
         </label>
         <label>
           Notes:
           <textarea name="_tools" defaultValue={recipe.tools} />
         </label>
         <div className="buttonBox">
-          <input type="submit" value="Confirm Edit" className="submitButton" />
-          <button type="button" onClick={deleteRecipe} className="submitButton">Delete</button>
+          <input type="submit" value="Confirm Edit" className="link" />
+          <button type="button" onClick={deleteRecipe} className="link">Delete</button>
         </div>
       </form>
       {/* <ImageUpload name={recipe.name} /> */}

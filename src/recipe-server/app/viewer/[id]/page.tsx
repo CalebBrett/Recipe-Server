@@ -8,10 +8,10 @@ export default async function Viewer({ params }) {
   return (
     <div>
       <div className="header">
-        <Link className="button" href="/">
+        <Link className="link" href="/">
           &lt;
         </Link>
-        <h1>{recipe?.name}</h1>
+        <h2>{recipe?.name}</h2>
         {/* <div className="filters">
           <button>recip 1</button>
           <button onClick={setId}>bourrito</button>

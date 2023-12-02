@@ -1,8 +1,8 @@
 - [x] Plan
 - [x] Setup raspberry pi
 - [x] Install Nginx
-- [ ] Develop backend
+- [x] Develop backend
 - [x] Develop frontend
 - [ ] 3D model/print case and add control buttons
 - [ ] Script to export shopping list and import it into PC+
-- [ ] Make frontend more aesthetically pleasing
+- [x] Make frontend more aesthetically pleasing
