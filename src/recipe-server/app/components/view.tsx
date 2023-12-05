@@ -21,6 +21,7 @@ export default function View({ recipe }) {
     }
     const instructions = recipe?.instructions.split("\n");
     const tools = recipe?.tools.split("\n");
+    let isInstructionsLonger = (instructions.length > ingredients.length + tools.length);
     //TODO: check if recipe undef and return not found.
 
     function simplifyFraction(fraction) {
@@ -49,15 +50,13 @@ export default function View({ recipe }) {
 
     return (
         <div id="view">
-            <div id="ingredients">
+            <div id="ingredients" className={isInstructionsLonger ? "" : "tallIng"}>
                 <div id="portionButtons">
                     <h2>Ingredients</h2>
                     <button onClick={() => modifyPortion(true)}>+</button>
                     <button onClick={() => modifyPortion(false)}>−</button>
                 </div>
                 {recipe?.portionNum * portionMultiplyer + " " + recipe?.portionDesc}
-                <br />
-                <br />
                 <ul>
                     {ingredients?.map((item, index) => {
                         return <li key={item}>{isNaN(sizeList[index] * portionMultiplyer) ? simplifyFraction(sizeList[index]) : sizeList[index] * portionMultiplyer} {item}</li>;
@@ -70,7 +69,7 @@ export default function View({ recipe }) {
                     })}
                 </ul>
             </div>
-            <div id="instructions">
+            <div id="instructions" className={isInstructionsLonger ? "tallIns" : ""}>
                 <h2>Instructions</h2>
                 <ul>
                     {instructions?.map((step) => {

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import axios from "axios";
+import ImageWithFallback from "@/app/components/imageFallback";
 
 export default function SummaryCard({ recipe }) {
   var isSelected = false;
@@ -21,8 +22,8 @@ export default function SummaryCard({ recipe }) {
   return (
     <div className="recipeCard">
       <Link href={"/viewer/" + recipe.id}>
-        <Image className="recipeImage" src={"/foodImages/" + recipe.name + ".jpg"} width={9999}
-          height={9999} />
+        <ImageWithFallback className="recipeImage" src={"/foodImages/" + recipe.name + ".jpg"} width={9999}
+          height={9999} alt="" />
         <h3>{recipe.name}</h3>
       </Link>
       <Link className="button" href={"/edit/" + recipe.id}>

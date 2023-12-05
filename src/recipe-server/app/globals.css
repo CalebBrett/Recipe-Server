@@ -8,7 +8,7 @@
   --highlight-color: #ea9010;
   --gap-size: 30px;
   --small-gap-size: 10px;
-  --font-size: 1.5em;
+  --font-size: 1.6em;
   --small-font-size: 1em;
   --form-font-size: 0.7em;
   --border: solid 5px var(--text-color);
@@ -84,6 +84,7 @@ li {
 .header a {
   border-bottom: none;
   border-top: none;
+  border-left: none;
   height: 100%;
 }
 
@@ -152,15 +153,18 @@ li {
   align-items: flex-start;
 }
 
+.tallIns {
+  border-left: var(--border);
+}
+
+.tallIng {
+  border-right: var(--border);
+}
+
 #ingredients {
   width: 30%;
   padding: var(--gap-size);
-  border-right: var(--border);
   border-bottom: var(--border);
-}
-
-#notes {
-  border-top: var(--border);
 }
 
 #instructions {
