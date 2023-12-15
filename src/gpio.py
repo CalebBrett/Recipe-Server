@@ -1,17 +1,15 @@
 import time
 import os
 import RPi.GPIO as GPIO
+from pynput.keyboard import Key, Controller
 
 ButtonRight=6 # yellow
-ButtonLeft=24 # brown idk
-ButtonL=17 # orange idk
-ButtonR=5 # green idk
+ButtonLeft=24 # brown
+ButtonL=17 # orange
+ButtonR=5 # green
 ButtonPower=27 # blue
-# ButtonUp=23 Purple
-# ButtonDown=22 Red
-# Added up and down to /boot/config.txt
-# dtoverlay=gpio-key, active_low=1,gpio=23,keycode=98,label=gpio_up,gpio_pull=up
-# dtoverlay=gpio-key, active_low=1,gpio=22,keycode=104,label=gpio_down,gpio_pull=up
+ButtonUp=23 # purple
+ButtonDown=22 # Red
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -20,7 +18,10 @@ GPIO.setup(ButtonLeft,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(ButtonR,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(ButtonL,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(ButtonPower,GPIO.IN, pull_up_down = GPIO.PUD_UP)
+GPIO.setup(ButtonUp,GPIO.IN, pull_up_down = GPIO.PUD_UP)
+GPIO.setup(ButtonDown,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
+keyboard = Controller()
 KeypressButton=time.time()
 KeyCooldown=0.5
 DisplayOn=True
@@ -45,7 +46,6 @@ def SetDisplay(DisplayKind,DisplayOn):
 
 while True:
     time.sleep(0.1)
-    print(GPIO.input(ButtonRight))
 
     if GPIO.input(ButtonRight)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
@@ -64,6 +64,7 @@ while True:
         print("L")
 
     if GPIO.input(ButtonPower)==0 and time.time()-KeypressButton>KeyCooldown:
+        print("Power")
         KeypressButton=time.time()
         if DisplayOn==True:
             DisplayOn=False
@@ -71,6 +72,18 @@ while True:
         else:
             DisplayOn=True
             SetDisplay("RD7",True)
+
+    if GPIO.input(ButtonUp)==0 and time.time()-KeypressButton>KeyCooldown:
+        KeypressButton=time.time()
+        print("Up")
+        keyboard.press(Key.up)
+        keyboard.release(Key.up)
+
+    if GPIO.input(ButtonDown)==0 and time.time()-KeypressButton>KeyCooldown:
+        KeypressButton=time.time()
+        print("Down")
+        keyboard.press(Key.down)
+        keyboard.release(Key.down)
 
 GPIO.cleanup()
 sys.exit()
