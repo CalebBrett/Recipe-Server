@@ -26,6 +26,7 @@ KeyCooldown=0
 DisplayOn=True
 
 def SetDisplay(DisplayKind,DisplayOn):
+    print("hi")
     cmd=""
     # if DisplayKind=="HDMI": 
     #     if DisplayOn==True:
@@ -46,9 +47,9 @@ def SetDisplay(DisplayKind,DisplayOn):
 while True:
     time.sleep(0.1)
 
-    print(GPIO.input(ButtonUp),end="")
-    print("-",end="")
-    print(GPIO.input(ButtonDown))
+    # print(GPIO.input(ButtonUp),end="")
+    # print("-",end="")
+    # print(GPIO.input(ButtonDown))
 
     if GPIO.input(ButtonRight)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
@@ -82,14 +83,10 @@ while True:
     if GPIO.input(ButtonUp)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("Up")
-        # keyboard.press(Key.up)
-        # keyboard.release(Key.up)
 
     if GPIO.input(ButtonDown)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("Down")
-        keyboard.press(Key.down)
-        keyboard.release(Key.down)
 
 GPIO.cleanup()
 sys.exit()
