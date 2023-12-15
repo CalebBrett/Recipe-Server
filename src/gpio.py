@@ -25,12 +25,12 @@ KeypressButton=time.time()
 KeyCooldown=0
 DisplayOn=True
 
-def SetDisplay(DisplayKind,DisplayOn):
+def SetDisplay(DisplayOn):
     print("hi")
     if DisplayOn==True:
-        cmd="bash -c \"/home/caleb/display/display_on\""
+        cmd="bash -c \"echo 0 > /sys/class/backlight/10-0045/bl_power\""
     else:
-        cmd="bash -c \"/home/caleb/display/display_off\""
+        cmd="bash -c \"echo 1 > /sys/class/backlight/10-0045/bl_power\""
     print(cmd)
     os.system(cmd)
     time.sleep(10)
@@ -66,10 +66,10 @@ while True:
         KeypressButton=time.time()
         if DisplayOn==True:
             DisplayOn=False
-            SetDisplay("RD7",False)
+            SetDisplay(False)
         else:
             DisplayOn=True
-            SetDisplay("RD7",True)
+            SetDisplay(True)
 
     if GPIO.input(ButtonUp)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
