@@ -1,6 +1,6 @@
 import time
 import os
-import gpio
+import RPi.GPIO as GPIO
 
 ButtonRight=6 # yellow
 ButtonLeft=24 # brown idk
