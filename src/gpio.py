@@ -47,6 +47,8 @@ def SetDisplay(DisplayKind,DisplayOn):
 while True:
     time.sleep(0.1)
 
+    print(GPIO.input(ButtonUp) + "-" + GPIO.input(ButtonDown))
+
     if GPIO.input(ButtonRight)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("RIGHT")
