@@ -22,7 +22,7 @@ GPIO.setup(ButtonUp,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(ButtonDown,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
 KeypressButton=time.time()
-KeyCooldown=0.5
+KeyCooldown=0
 DisplayOn=True
 
 def SetDisplay(DisplayKind,DisplayOn):
@@ -57,7 +57,6 @@ while True:
     if GPIO.input(ButtonLeft)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("Left")
-        press_and_release('enter')
 
     if GPIO.input(ButtonR)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
