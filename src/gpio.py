@@ -76,8 +76,8 @@ while True:
     if GPIO.input(ButtonUp)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("Up")
-        keyboard.press(Key.up)
-        keyboard.release(Key.up)
+        # keyboard.press(Key.up)
+        # keyboard.release(Key.up)
 
     if GPIO.input(ButtonDown)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
