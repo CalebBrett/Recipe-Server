@@ -22,7 +22,7 @@ GPIO.setup(ButtonUp,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(ButtonDown,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
 KeypressButton=time.time()
-KeyCooldown=0.5
+KeyCooldown=0.3
 DisplayOn=True
 
 while True:
