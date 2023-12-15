@@ -15,11 +15,11 @@ ButtonPower=27 # blue
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(ButtonRight,GPIO.IN)
-GPIO.setup(ButtonLeft,GPIO.IN)
-GPIO.setup(ButtonR,GPIO.IN)
-GPIO.setup(ButtonL,GPIO.IN)
-GPIO.setup(ButtonPower,GPIO.IN)
+GPIO.setup(ButtonRight,GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(ButtonLeft,GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(ButtonR,GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(ButtonL,GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(ButtonPower,GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
 
 KeypressButton=time.time()
 KeyCooldown=0.5
