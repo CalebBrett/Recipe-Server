@@ -15,11 +15,11 @@ ButtonPower=27 # blue
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(ButtonRight,GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-GPIO.setup(ButtonLeft,GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-GPIO.setup(ButtonR,GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-GPIO.setup(ButtonL,GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
-GPIO.setup(ButtonPower,GPIO.IN, pull_up_down = GPIO.PUD_DOWN)
+GPIO.setup(ButtonRight,GPIO.IN, pull_up_down = GPIO.PUD_UP)
+GPIO.setup(ButtonLeft,GPIO.IN, pull_up_down = GPIO.PUD_UP)
+GPIO.setup(ButtonR,GPIO.IN, pull_up_down = GPIO.PUD_UP)
+GPIO.setup(ButtonL,GPIO.IN, pull_up_down = GPIO.PUD_UP)
+GPIO.setup(ButtonPower,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
 KeypressButton=time.time()
 KeyCooldown=0.5
@@ -47,23 +47,23 @@ while True:
     time.sleep(0.1)
     print(GPIO.input(ButtonRight))
 
-    if GPIO.input(ButtonRight)==1 and time.time()-KeypressButton>KeyCooldown:
+    if GPIO.input(ButtonRight)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("RIGHT")
     
-    if GPIO.input(ButtonLeft)==1 and time.time()-KeypressButton>KeyCooldown:
+    if GPIO.input(ButtonLeft)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("Left")
 
-    if GPIO.input(ButtonR)==1 and time.time()-KeypressButton>KeyCooldown:
+    if GPIO.input(ButtonR)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("R")
 
-    if GPIO.input(ButtonL)==1 and time.time()-KeypressButton>KeyCooldown:
+    if GPIO.input(ButtonL)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("L")
 
-    if GPIO.input(ButtonPower)==1 and time.time()-KeypressButton>KeyCooldown:
+    if GPIO.input(ButtonPower)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         if DisplayOn==True:
             DisplayOn=False
