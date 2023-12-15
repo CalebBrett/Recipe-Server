@@ -1,7 +1,7 @@
 import time
 import os
 import RPi.GPIO as GPIO
-from pynput.keyboard import Key, Controller
+from keyboard import press_and_release
 
 ButtonRight=6 # yellow
 ButtonLeft=24 # brown
@@ -21,7 +21,6 @@ GPIO.setup(ButtonPower,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(ButtonUp,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(ButtonDown,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
-keyboard = Controller()
 KeypressButton=time.time()
 KeyCooldown=0.5
 DisplayOn=True
@@ -58,22 +57,18 @@ while True:
     if GPIO.input(ButtonLeft)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("Left")
-        keyboard.press('a')
-        keyboard.release('a')
+        press_and_release('enter')
 
     if GPIO.input(ButtonR)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("R")
-        keyboard.press(Key.down)
-        time.sleep(0.2)
-        keyboard.release(Key.down)
+        press_and_release('up')
 
     if GPIO.input(ButtonL)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("L")
-        keyboard.press(Key.up)
-        time.sleep(0.2)
-        keyboard.release(Key.up)
+        press_and_release('down')
+
 
     if GPIO.input(ButtonPower)==0 and time.time()-KeypressButton>KeyCooldown:
         print("Power")
