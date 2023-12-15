@@ -22,7 +22,7 @@ GPIO.setup(ButtonUp,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 GPIO.setup(ButtonDown,GPIO.IN, pull_up_down = GPIO.PUD_UP)
 
 KeypressButton=time.time()
-KeyCooldown=0
+KeyCooldown=0.5
 DisplayOn=True
 
 while True:
@@ -59,12 +59,12 @@ while True:
             os.system("bash -c \"echo 0 > /sys/class/backlight/10-0045/bl_power\"")
             DisplayOn=True
 
-    if GPIO.input(ButtonUp)==0 and time.time()-KeypressButton>KeyCooldown:
+    if GPIO.input(ButtonUp)==0:
         KeypressButton=time.time()
         print("Up")
         press_and_release('up')
 
-    if GPIO.input(ButtonDown)==0 and time.time()-KeypressButton>KeyCooldown:
+    if GPIO.input(ButtonDown)==0:
         KeypressButton=time.time()
         print("Down")
         press_and_release('down')
