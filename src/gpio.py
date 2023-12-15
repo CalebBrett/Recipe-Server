@@ -38,8 +38,7 @@ def SetDisplay(DisplayKind,DisplayOn):
             cmd="bash -c \"/home/caleb/display/display_on\""
         else:
             cmd="bash -c \"/home/caleb/display/display_off\""
-    if cmd=="":
-        print("Display-Status: "+str(DisplayOn))
+    if cmd<>"":
         print(cmd)
         os.system(cmd)
         time.sleep(10)
