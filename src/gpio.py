@@ -27,21 +27,13 @@ DisplayOn=True
 
 def SetDisplay(DisplayKind,DisplayOn):
     print("hi")
-    cmd=""
-    # if DisplayKind=="HDMI": 
-    #     if DisplayOn==True:
-    #         cmd="xset dpms force on"
-    #     else:
-    #         cmd="xset dpms force off"
-    if DisplayKind=="RD7": #Raspberry Pi Touch-Display 7"
-        if DisplayOn==True:
-            cmd="bash -c \"/home/caleb/display/display_on\""
-        else:
-            cmd="bash -c \"/home/caleb/display/display_off\""
-    if cmd<>"":
-        print(cmd)
-        os.system(cmd)
-        time.sleep(10)
+    if DisplayOn==True:
+        cmd="bash -c \"/home/caleb/display/display_on\""
+    else:
+        cmd="bash -c \"/home/caleb/display/display_off\""
+    print(cmd)
+    os.system(cmd)
+    time.sleep(10)
 
 while True:
     time.sleep(0.1)
