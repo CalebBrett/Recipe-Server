@@ -39,15 +39,16 @@ while True:
     if GPIO.input(ButtonLeft)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("Left")
+        press_and_release('down')
 
     if GPIO.input(ButtonR)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("R")
-        press_and_release('up')
 
     if GPIO.input(ButtonL)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("L")
+        press_and_release('up')
 
     if GPIO.input(ButtonPower)==0 and time.time()-KeypressButton>KeyCooldown:
         print("Power")
@@ -62,12 +63,12 @@ while True:
     if GPIO.input(ButtonUp)==0:
         KeypressButton=time.time()
         print("Up")
-        press_and_release('up')
 
     if GPIO.input(ButtonDown)==0:
         KeypressButton=time.time()
         print("Down")
-        press_and_release('down')
 
 GPIO.cleanup()
 sys.exit()
+
+# TODO: if display off then dont do anything (and stop touch) ALSO MAYBE NO IMAGES OR GOOGLE PHOTOS IMAGE URLS FOR IMG SRC

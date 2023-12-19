@@ -25,7 +25,8 @@ export default function Home() {
   return (
     <>
       <div className="header">
-        <Link className="link" href="/create">
+        <div className="computerOnlySpace"></div>
+        <Link className="link computerOnly" href="/create">
           New
         </Link>
         <input type="search" />

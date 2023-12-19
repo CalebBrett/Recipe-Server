@@ -20,16 +20,17 @@ export default function SummaryCard({ recipe }) {
   }
 
   return (
-    <div className="recipeCard">
-      <Link href={"/viewer/" + recipe.id}>
-        <ImageWithFallback className="recipeImage" src={"/foodImages/" + recipe.name + ".jpg"} width={9999}
-          height={9999} alt="" />
-        <h3>{recipe.name}</h3>
-      </Link>
-      <Link className="button" href={"/edit/" + recipe.id}>
+    // <div className="recipeCard">
+    <Link href={"/viewer/" + recipe.id} className="recipeCard">
+      {/* <ImageWithFallback className="recipeImage" src={"/foodImages/" + recipe.name + ".jpg"} width={9999}
+        height={9999} alt="" /> */}
+      <h3>{recipe.name}</h3>
+      {/* </Link> */}
+      <Link className="button computerOnly" href={"/edit/" + recipe.id}>
         <Image className="icon" src="/icons/edit.png" width={9999}
           height={9999} alt="Edit" />
       </Link>
-    </div>
+      {/* </div> */}
+    </Link>
   );
 };
