@@ -44,6 +44,7 @@ while True:
     if GPIO.input(ButtonR)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
         print("R")
+        press_and_release('f5')
 
     if GPIO.input(ButtonL)==0 and time.time()-KeypressButton>KeyCooldown:
         KeypressButton=time.time()
