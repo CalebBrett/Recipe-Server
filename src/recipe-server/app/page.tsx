@@ -42,6 +42,7 @@ export default function Home() {
         <button>Sweets</button>
       </div>
       <RecipesList />
+      <div id="footer"></div>
     </>
   );
 }

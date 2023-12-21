@@ -120,6 +120,10 @@ li {
   /* align-items: center; */
 }
 
+#footer {
+  height: var(--gap-size);
+}
+
 .recipeCard {
   background-color: var(--background-content);
   /* border-radius: 2em; */
