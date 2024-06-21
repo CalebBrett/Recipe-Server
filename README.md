@@ -17,6 +17,18 @@ Extra features (WIP):
    - Add tools needed (stove, 1cup measure, table spoon etc.) could eventually use to optimize cooking meals in parallel
    - Group ingredients and align with the step in instructions where needed
 
+Tools to use:
+   - Raspberry Pi
+   - SQL
+   - Nginx
+
+Tools to learn:
+   - More about web servers and networking
+   - Modern fullstack standards
+   - Next.js
+   - Prisma
+   - TypeScript
+
 ## Tasks:
 - [x] Plan
 - [x] Setup raspberry pi
@@ -40,18 +52,6 @@ Extra features (WIP):
 - [ ] Add ingredient recipe selection/relations
 - [x] Add new buttons and figure out better way to convert gpio to keyboard input
 - [ ] Power off just turns backlight off should either sleep or disable input, also can turn brightness down or make it a button thing
-
-Tools to use:
-   - Raspberry Pi
-   - SQL
-   - Nginx
-
-Tools to learn:
-   - More about web servers and networking
-   - Modern fullstack standards
-   - Next.js
-   - Prisma
-   - TypeScript
 
 ## Notes:
 
