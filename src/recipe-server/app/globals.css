@@ -3,11 +3,12 @@
 :root {
   --background-body: #eaefbd;
   --background-content: #90be6d;
+  /* #ef5b5b, #ea9010 */
   --alt-content: #ea9010;
   --text-color: #1c3738;
-  --highlight-color: #ea9010;
   --gap-size: 30px;
   --small-gap-size: 10px;
+  --tiny-gap-size: 5px;
   --font-size: 1.5em;
   --small-font-size: 1em;
   --form-font-size: 0.7em;
@@ -76,32 +77,52 @@ li {
 }
 
 .header input {
-  width: 50%;
+  flex-grow: 1;
   border: var(--border);
-  height: 2.5em;
+  margin-left: var(--small-gap-size);
+  margin-right: var(--small-gap-size);
+  padding-left: var(--small-gap-size);
+  font-size: var(--small-font-size);
 }
 
 .header a {
   border-bottom: none;
   border-top: none;
-  border-left: none;
   height: 100%;
 }
 
-.filters {
-  width: 50%;
-  margin: 0 25% 0 25%;
-  padding: var(--small-gap-size);
+.header button {
+  border-bottom: none;
+  border-top: none;
+  height: 100%;
+}
+
+.leftLink {
+  border-left: none;
+}
+
+.rightLink {
+  border-right: none;
+}
+
+.filter-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.filters {
+  width: max-content;
+  display: inline;
   background-color: var(--background-content);
   border: var(--border);
   border-top: none;
-  /* border-radius: 0 0 50px 50px; */
+  /* border-radius: 0 0 25px 25px; */
 }
 
 .filters button {
-  padding: 1%;
+  padding: var(--tiny-gap-size);
+  margin: var(--tiny-gap-size);
   border-radius: 50px;
   border: var(--border);
   background-color: #00000000;
@@ -117,7 +138,6 @@ li {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding-left: var(--gap-size);
-  /* align-items: center; */
 }
 
 #footer {
@@ -126,12 +146,13 @@ li {
 
 .recipeCard {
   background-color: var(--background-content);
-  /* border-radius: 2em; */
+  background-blend-mode: multiply;
   margin-top: var(--gap-size);
   margin-right: var(--gap-size);
-  padding: var(--gap-size);
+  padding: var(--small-gap-size);
   text-decoration: none;
   border: var(--border);
+  text-align: center;
 }
 
 .recipeCard:hover {
@@ -149,22 +170,50 @@ li {
   height: 300px;
   width: 100%;
   object-fit: cover;
-  /* border-radius: 2em 2em 0 0; */
 }
 
 .icon {
-  height: 50px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
 }
 
-/* .selected {
-  border: solid 10px green;
-} */
+.selected {
+  border-color: var(--alt-content);
+}
+
+.selectedOptionsContainer {
+  display: flex;
+  align-items: flex-end;
+}
+
+#upButton {
+  display: none;
+  position: fixed;
+  bottom: var(--small-gap-size);
+  right: var(--small-gap-size);
+  width: 50px;
+  height: 50px;
+  z-index: 99;
+  background-color: var(--background-content);
+}
+
+#upButton:hover {
+  background-color: var(--text-color);
+}
 
 /* Viewer Page */
 #view {
   display: flex;
   align-items: flex-start;
+  list-style-position: inside;
+}
+
+#view ul {
+  list-style-type: "• ";
+}
+
+#view li {
+  margin: 0;
 }
 
 .tallIns {
@@ -177,14 +226,26 @@ li {
 
 #ingredients {
   width: 30%;
-  padding: var(--gap-size);
+  padding: var(--tiny-gap-size);
+  border-bottom: var(--border);
+}
+
+#notesList {
+  border-bottom: var(--border);
+  padding: var(--tiny-gap-size);
+}
+
+.noNotes {
+  display: none;
+}
+
+#instructionsContainer {
+  width: 70%;
   border-bottom: var(--border);
 }
 
 #instructions {
-  width: 70%;
-  padding: var(--gap-size);
-  border-bottom: var(--border);
+  padding: var(--tiny-gap-size);
 }
 
 #portionButtons {
@@ -194,9 +255,9 @@ li {
 
 #portionButtons button {
   margin-left: 3%;
-  height: 50px;
-  width: 50px;
-  font-size: var(--small-font-size);
+  padding-left: 2px;
+  width: var(--font-size);
+  font-size: var(--form-font-size);
 }
 
 /* Create & Edit Page */
@@ -204,41 +265,50 @@ li {
   height: 70vh;
   background-color: var(--background-content);
   padding: var(--gap-size);
-  margin: 2%;
+  margin: var(--gap-size);
   border: var(--border);
 }
 
 .forms form {
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   grid-template-rows: auto 4fr 1fr;
   gap: var(--gap-size);
 }
 
-.mainTextareas {
-  width: 100%;
+.forms textarea {
+  width: 98%;
   height: 90%;
   resize: none;
   font-size: var(--form-font-size);
+  padding-left: 2%;
 }
 
-.forms textarea {
-  width: 100%;
-  resize: none;
-  font-size: var(--form-font-size);
-  padding-left: var(--small-gap-size);
+#notes {
+  height: 80%;
 }
 
 .textInput {
-  width: 300px;
-  margin: var(--small-gap-size);
+  display: flex;
+}
+
+.textInput p {
+  margin: var(--small-gap-size) 0 var(--small-gap-size) 0;
+}
+
+.textInput input {
+  flex-grow: 1;
+  width: 10px;
   font-size: var(--form-font-size);
   padding-left: var(--small-gap-size);
+  margin: var(--small-gap-size);
+  margin-right: 0;
 }
 
 #numberInput {
-  width: 42px;
+  width: 45px;
+  flex-grow: 0;
   margin: var(--small-gap-size);
   margin-right: 0;
   font-size: var(--form-font-size);
@@ -252,22 +322,58 @@ li {
   margin-bottom: var(--small-gap-size);
 }
 
-.computerOnlySpace {
-  display: none;
+.tagSelection {
+  height: 80%;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+  row-gap: var(--small-gap-size);
+}
+
+/* Backup Page */
+.backup {
+  height: 70vh;
+  background-color: var(--background-content);
+  padding: var(--gap-size);
+  margin: var(--gap-size);
+  border: var(--border);
+}
+
+.backup form {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 1fr);
+  grid-template-rows: auto;
+  gap: var(--gap-size);
+}
+
+.backup textarea {
+  width: 99%;
+  height: 100%;
+  resize: none;
+  font-size: var(--form-font-size);
+  padding-left: var(--small-gap-size);
+}
+
+.backup .buttonBox {
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+}
+
+/* Half Monitor */
+@media (max-width: 900px) {
+  .tagSelection {
+    overflow-x: scroll;
+  }
 }
 
 /* On Screen */
-@media (max-width: 800px) {
+@media (max-width: 801px) {
   #list {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .computerOnly {
     display: none;
-  }
-
-  .computerOnlySpace {
-    display: block;
-    height: 55.1px;
   }
 }

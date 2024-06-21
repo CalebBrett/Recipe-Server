@@ -1,10 +1,10 @@
 Backend:
 Database for recipies -> relational ingredients and instructions -> what i have at home -> expiery timers + done meals
-Pc+ script take ingredients for upcoming recipies and export to pc format and import into pc website
+Grocery store rewards points app script take ingredients for upcoming recipies and export to grocery store rewards points app format and import into grocery store rewards points website ** grocery store rewards points website no longer has this feature so now will copy ingredient list to clipboard to paste into notes app/email
 
 Front end:
-On external connection -> add/edit recipies -> que up next session (with scaling) -> export next session to PC list
-On device -> List of recipies sorted by meal, type and oldest unused -> choose one or more to add to current session or start session if done on external conneted device -> view current session and move between 1 or more recipies -> for each show ingredients and instrucitons (with scaling not really needed but good incase need to scale at time of cooking)
+On external connection -> add/edit recipies -> que up next session (with scaling) -> export next session to grocery store rewards points app shopping list
+On device -> List of recipies sorted by meal type and oldest unused -> choose one or more to add to current session or start session if done on external conneted device -> view current session and move between 1 or more recipies -> for each show ingredients and instrucitons (with scaling not really needed but good incase need to scale at time of cooking)
 
 Buttons that I can hit with elbow (messy hands) to navigate while cooking:
 Scroll up and down buttons

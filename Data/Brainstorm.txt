@@ -7,11 +7,11 @@ server -> so can add and edit remotley and have it all sync
 ingredient list + scalable portions
 instructions
 meal plan + leftover
-export shopping list into pc app.
+export shopping list into grocery store rewards points app.
 
-expiery thing maybe
+expiry thing maybe
 
-Given list of ingredients give meal possibilities (kinda hard to keep updated) maybe easy presets or get from pc+ -> would need to also have tolerences for ingredients that are not super important
+Given list of ingredients give meal possibilities (kinda hard to keep updated) maybe easy presets or get from grocery store rewards points app -> would need to also have tolerences for ingredients that are not super important
 
 Rail movement system so it follows you around the kitchen (probably too overkill)
 

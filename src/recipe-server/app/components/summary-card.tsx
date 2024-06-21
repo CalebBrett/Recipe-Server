@@ -2,35 +2,40 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import axios from "axios";
+import { useState } from "react";
+import { isSelected, toggleCurrentSelection } from '@/app/actions';
 import ImageWithFallback from "@/app/components/imageFallback";
+import bg from '../../public/paper4.png';
 
-export default function SummaryCard({ recipe }) {
-  var isSelected = false;
+export default function SummaryCard({ recipe, updateCountCallback }: { recipe: T_Recipe; updateCountCallback: Function; }) {
+  const backgroundOffsets = ["left", "center", "right", "top", "bottom"];
+  const [IsSelected, setIsSelected] = useState(false);
+
+  async function init() {
+    setIsSelected(await isSelected({ recipeId: recipe.id }));
+  };
+  init();
 
   async function selection() {
-    console.log(isSelected);
-    if (isSelected) {
-      await axios.put("../api/current", { id: parseInt(recipe?.id) });
-      isSelected = false;
-    } else {
-      await axios.post("../api/current", { id: parseInt(recipe?.id) });
-      isSelected = true;
+    if (recipe.id != undefined) {
+      await toggleCurrentSelection({ recipeId: recipe.id });
+      setIsSelected(!IsSelected);
+      updateCountCallback();
     }
   }
 
   return (
-    // <div className="recipeCard">
-    <Link href={"/viewer/" + recipe.id} className="recipeCard">
+    <div onClick={selection} className={IsSelected ? "recipeCard selected" : "recipeCard"}
+    // style={{ backgroundPosition: backgroundOffsets[Math.floor(Math.random() * 5)], backgroundImage: `url(${bg.src})` }}
+    >
       {/* <ImageWithFallback className="recipeImage" src={"/foodImages/" + recipe.name + ".jpg"} width={9999}
         height={9999} alt="" /> */}
       <h3>{recipe.name}</h3>
-      {/* </Link> */}
       <Link className="button computerOnly" href={"/edit/" + recipe.id}>
-        <Image className="icon" src="/icons/edit.png" width={9999}
-          height={9999} alt="Edit" />
+        <Image className="icon" src="/icons/edit.png" width={100}
+          height={100} alt="Edit" />
       </Link>
-      {/* </div> */}
-    </Link>
+    </div>
+    // </Link>
   );
 };

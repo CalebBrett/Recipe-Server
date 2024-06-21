@@ -4,6 +4,7 @@ Tools to use:
    - Nginx
 Tools to learn:
    - More about web servers and networking
+   - Modern fullstack standards
    - Next.js
    - Prisma
-   - Modern fullstack standards
+   - TypeScript

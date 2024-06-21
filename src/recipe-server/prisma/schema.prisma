@@ -10,34 +10,26 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-  posts Post[]
-}
-
-model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  author    User    @relation(fields: [authorId], references: [id])
-  authorId  Int
-}
-
 // maybe relatioal with ingredients and instructions
 model Recipes {
-  id           Int    @id @default(autoincrement())
-  name         String @unique
-  portionNum   Int
-  portionDesc  String
-  ingredients  String
-  instructions String
-  tools        String
+  id            Int     @id @default(autoincrement())
+  name          String  @unique
+  portionNum    Int
+  portionDesc   String
+  ingredients   String
+  instructions  String
+  tools         String
+  tagMeal       Boolean @default(false)
+  tagBreakfast  Boolean @default(false)
+  tagSnack      Boolean @default(false)
+  tagSweet      Boolean @default(false)
+  tagIngredient Boolean @default(false)
+  tagSide       Boolean @default(false)
+  tagFried      Boolean @default(false)
 }
 
 model Current {
-  id       Int  @id @default(autoincrement())
-  recipeId Int?
+  id                Int @id @default(autoincrement())
+  recipeId          Int @unique
+  portionMultiplier Int @default(1)
 }
