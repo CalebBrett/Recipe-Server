@@ -2,6 +2,7 @@ Tools to use:
    - Raspberry Pi
    - SQL
    - Nginx
+
 Tools to learn:
    - More about web servers and networking
    - Modern fullstack standards

@@ -6,6 +6,7 @@ Base features:
    - Edit recipie list remotely
    - Scalable portions
    - Export shopping list to grocery rewards points app
+
 Extra features (WIP):
    - Meal + leftovers planner (calendar type thing)
    - Expiry tracker

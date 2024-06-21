@@ -8,6 +8,7 @@ Base features:
    - Edit recipie list remotely
    - Scalable portions
    - Export shopping list to grocery rewards points app
+
 Extra features (WIP):
    - Meal + leftovers planner (calendar type thing)
    - Expiry tracker
@@ -44,6 +45,7 @@ Tools to use:
    - Raspberry Pi
    - SQL
    - Nginx
+
 Tools to learn:
    - More about web servers and networking
    - Modern fullstack standards
@@ -51,7 +53,7 @@ Tools to learn:
    - Prisma
    - TypeScript
 
-##Notes:
+## Notes:
 
 Backend:
 Database for recipies -> relational ingredients and instructions -> what i have at home -> expiery timers + done meals
